@@ -94,8 +94,8 @@ export default function Index({ publication, initialPosts, initialPageInfo }: Pr
 				<Container className="mx-auto flex max-w-3xl flex-col items-stretch gap-10 px-2 py-4">
 					<PersonalHeader />
 					<p className="-mt-7  text-pretty text-sm tracking-tight text-neutral-400 dark:text-neutral-600">
-						this is my place on the internet to dump my thoughts about anything and everything.
-						don't consider any of these blogs as a source of information or truth, these are just my
+						this is my place on the internet to dump my thoughts about anything and everything. do
+						not consider any of these blogs as a source of information or truth, these are just my
 						experiences. the topics in this blog can vary from business, tech, photography, design
 						and more, the spectrum is pretty wide.
 					</p>
