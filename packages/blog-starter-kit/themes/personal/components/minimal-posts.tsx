@@ -8,19 +8,26 @@ type Props = {
 
 export const MinimalPosts = ({ posts }: Props) => {
 	return (
-		<section className="flex w-full flex-col items-stretch gap-10 lg:max-w-lg">
-			{posts.map((post) => (
-				<MinimalPostPreview
-					key={post.id}
-					title={post.title}
-					date={post.publishedAt}
-					author={{
-						name: post.author.name,
-					}}
-					slug={post.slug}
-					commentCount={post.comments?.totalDocuments}
-				/>
-			))}
-		</section>
+		<table className="table text-left">
+			<thead className="border-b border-neutral-300 dark:border-neutral-800">
+				<tr className="text-xs uppercase text-neutral-500 dark:text-neutral-400">
+					<th className="font-mono font-normal tracking-tight">/Date</th>
+					<th className="font-mono font-normal tracking-tight">/Title</th>
+				</tr>
+			</thead>
+			<tbody>
+				{posts.map((post) => (
+					<MinimalPostPreview
+						key={post.id}
+						title={post.title}
+						date={post.publishedAt}
+						author={{
+							name: post.author.name,
+						}}
+						slug={post.slug}
+					/>
+				))}
+			</tbody>
+		</table>
 	);
 };

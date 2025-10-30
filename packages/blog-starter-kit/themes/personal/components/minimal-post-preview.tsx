@@ -9,30 +9,26 @@ type Props = {
 	date: string;
 	author: Author;
 	slug: string;
-	commentCount: number;
 };
 
-export const MinimalPostPreview = ({ title, date, slug, commentCount }: Props) => {
+export const MinimalPostPreview = ({ title, date, slug }: Props) => {
 	const postURL = `/${slug}`;
 
 	return (
-		<section className="flex flex-col items-start gap-1">
-			<h2 className="text-lg leading-tight tracking-tight text-black dark:text-white">
-				<Link href={postURL}>{title}</Link>
-			</h2>
-			<p className="flex flex-row items-center gap-2">
-				<Link href={postURL} className="text-sm text-neutral-600 dark:text-neutral-400">
-					<DateFormatter dateString={date} />
-				</Link>
-				{commentCount > 2 && (
-					<>
-						<span>&middot;</span>
-						<Link href={postURL} className="text-sm text-neutral-600 dark:text-neutral-400">
-							{commentCount} comments
-						</Link>
-					</>
-				)}
-			</p>
-		</section>
+		<tr className="border-b  border-neutral-300 hover:bg-[#E9FF27] dark:border-neutral-800 dark:hover:bg-[#0B64FE]">
+			<td className="py-2.5">
+				<p className="text-xs">
+					<Link href={postURL} className=" text-neutral-600 dark:text-neutral-400">
+						<div className="mr-2 inline-block size-2 bg-black dark:bg-white" />
+						<DateFormatter dateString={date} />
+					</Link>
+				</p>
+			</td>
+			<td className="py-2.5">
+				<h2 className="line-clamp-1 text-2xl leading-tight tracking-tight text-black dark:text-white">
+					<Link href={postURL}>{title}</Link>
+				</h2>
+			</td>
+		</tr>
 	);
 };

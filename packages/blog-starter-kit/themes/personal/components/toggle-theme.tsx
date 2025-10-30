@@ -1,6 +1,5 @@
-import { ComponentProps } from 'react';
 import { useTheme } from 'next-themes';
-import { Moon, Sun } from './icons';
+import { ComponentProps } from 'react';
 
 type Props = ComponentProps<'button'>;
 
@@ -10,14 +9,17 @@ export function ToggleTheme(props: Props) {
 	return (
 		<button
 			aria-label="toggle"
-			className="hover:bg-background border-0"
 			onClick={() => {
 				setTheme(theme === 'dark' ? 'light' : 'dark');
 			}}
-      {...props}
+			{...props}
 		>
-			<Sun className="aspect-square w-6 scale-100 dark:hidden dark:scale-0" />
-			<Moon className="hidden aspect-square w-6 scale-0 dark:block dark:scale-100" />
+			<p className="bg-zinc-200/70 px-1 py-0.5 text-xs font-medium uppercase  tracking-tight text-neutral-600 dark:hidden dark:scale-100 dark:bg-zinc-800/60 dark:text-neutral-400">
+				Dark
+			</p>
+			<p className="hidden bg-zinc-200/70 px-1 py-0.5 text-xs font-medium uppercase tracking-tight text-neutral-600 dark:block dark:scale-100 dark:bg-zinc-800/60 dark:text-neutral-400">
+				Light
+			</p>
 		</button>
 	);
 }

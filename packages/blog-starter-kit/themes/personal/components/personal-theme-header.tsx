@@ -19,9 +19,9 @@ export const PersonalHeader = () => {
 	const hiddenItems = navbarItems.slice(2);
 
 	const navList = (
-		<ul className="flex list-none flex-row items-center gap-4 text-xs font-semibold uppercase tracking-tight text-neutral-600 dark:text-neutral-300">
+		<ul className="flex list-none flex-row items-center gap-4 text-xs font-medium uppercase tracking-tight text-neutral-600 dark:text-neutral-400">
 			{visibleItems.map((item) => (
-				<li key={item.url}>
+				<li key={item.url} className="bg-zinc-200/70 px-1 py-0.5 dark:bg-zinc-800/60">
 					<a href={item.url} target="_blank" rel="noopener noreferrer" className="hover:underline">
 						{item.label}
 					</a>
@@ -61,16 +61,21 @@ export const PersonalHeader = () => {
 	);
 
 	return (
-		<header className="grid grid-cols-2 items-center gap-5 ">
-			<div className="col-span-full md:col-span-1">
+		<>
+			<div className="flex items-center justify-between">
+				<nav>{navList}</nav>
+				<ToggleTheme />
+			</div>
+			<header className="">
 				<div className="flex justify-between">
 					<h1>
 						<Link
-							className="flex flex-row items-center gap-2 text-lg font-bold leading-tight tracking-tight text-black dark:text-white"
+							className="flex flex-row items-center gap-2 text-lg font-bold leading-tight tracking-tight text-black  dark:text-white"
 							href="/"
 							aria-label={`${publication.author.name}'s blog home page`}
 						>
 							{publication.author.profilePicture && (
+								// eslint-disable-next-line @next/next/no-img-element
 								<img
 									className="block h-8 w-8 rounded-full fill-current"
 									alt={publication.author.name}
@@ -84,19 +89,8 @@ export const PersonalHeader = () => {
 							{publication.title}
 						</Link>
 					</h1>
-					<ToggleTheme className="md:hidden" />
 				</div>
-			</div>
-			<div className="col-span-full flex flex-row items-center justify-between gap-4 md:col-span-1 md:justify-end">
-				<nav>{navList}</nav>
-				<ToggleTheme className="hidden md:block" />
-				{/* <Button
-          label=""
-          type="outline"
-          className="!p-2"
-          icon={<NewsletterPlusSVG className="w-5 h-5 fill-current" />}
-        /> */}
-			</div>
-		</header>
+			</header>
+		</>
 	);
 };
