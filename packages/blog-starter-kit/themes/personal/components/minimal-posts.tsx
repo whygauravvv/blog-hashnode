@@ -10,9 +10,9 @@ export const MinimalPosts = ({ posts }: Props) => {
 	return (
 		<table className="table text-left">
 			<thead className="border-b border-neutral-300 dark:border-neutral-800">
-				<tr className=" text-xs uppercase text-neutral-500 dark:text-neutral-400">
-					<th className="min-w-20 font-mono font-normal tracking-tight">/Date</th>
-					<th className="min-w-20 font-mono font-normal tracking-tight">/Title</th>
+				<tr className="text-xs uppercase text-neutral-500 dark:text-neutral-400">
+					<th className="w-20 font-mono font-normal tracking-tight">/Date</th>
+					<th className="font-mono font-normal tracking-tight">/Title</th>
 				</tr>
 			</thead>
 			<tbody>
