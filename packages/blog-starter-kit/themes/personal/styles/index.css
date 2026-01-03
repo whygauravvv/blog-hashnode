@@ -1,9 +1,163 @@
+@font-face {
+	font-family: 'Open Runde';
+	src: url('../assets/web/OpenRunde-Regular.woff2') format('woff2'),
+		url('../assets/web/OpenRunde-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Open Runde';
+	src: url('../assets/web/OpenRunde-Medium.woff2') format('woff2'),
+		url('../assets/web/OpenRunde-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Open Runde';
+	src: url('../assets/web/OpenRunde-Semibold.woff2') format('woff2'),
+		url('../assets/web/OpenRunde-Semibold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Open Runde';
+	src: url('../assets/web/OpenRunde-Bold.woff2') format('woff2'),
+		url('../assets/web/OpenRunde-Bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .hashnode-content-style{
-    @apply prose break-words text-slate-950 first:prose-p:mt-0 prose-img:max-w-full prose-p:leading-snug prose-a:underline hover:prose-a:bg-primary-50 dark:hover:prose-a:text-primary-500 dark:hover:prose-a:bg-neutral-800 dark:text-neutral-50 prose-blockquote:leading-snug prose-a:leading-snug prose-figure:leading-snug prose-figcaption:leading-snug prose-pre:leading-snug prose-li:leading-snug prose-ul:leading-snug prose-ol:leading-snug prose-th:leading-snug prose-td:leading-snug lg:prose-xl dark:prose-invert dark:prose-pre:bg-neutral-900 first:prose-h1:mt-0 first:prose-h2:mt-0 first:prose-h3:mt-0 first:prose-h4:mt-0 first:prose-h5:mt-0;
+    @apply prose break-words first:prose-p:mt-0 prose-img:max-w-full prose-p:leading-relaxed prose-a:underline hover:prose-a:bg-primary-50 dark:hover:prose-a:text-primary-500 dark:hover:prose-a:bg-neutral-800 dark:text-neutral-50 prose-blockquote:leading-snug prose-a:leading-snug prose-figure:leading-snug prose-figcaption:leading-snug prose-pre:leading-snug prose-li:leading-snug prose-ul:leading-snug prose-ol:leading-snug prose-th:leading-snug prose-td:leading-snug lg:prose-xl dark:prose-invert dark:prose-pre:bg-neutral-900 first:prose-h1:mt-0 first:prose-h2:mt-0 first:prose-h3:mt-0 first:prose-h4:mt-0 first:prose-h5:mt-0;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(33, 32, 28);
+    line-height: 1.75;
+}
+
+/* Improved paragraph spacing for better readability */
+.hashnode-content-style p {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+}
+
+/* Enhanced heading styles with better hierarchy */
+.hashnode-content-style h1 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    color: rgb(33, 32, 28);
+}
+
+.hashnode-content-style h2 {
+    font-weight: 600;
+    line-height: 1.3;
+    margin-top: 1.75em;
+    margin-bottom: 0.75em;
+    color: rgb(33, 32, 28);
+}
+
+.hashnode-content-style h3 {
+    font-weight: 600;
+    line-height: 1.4;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    color: rgb(33, 32, 28);
+}
+
+/* Dark mode heading colors - softer for less contrast */
+.dark .hashnode-content-style h1,
+.dark .hashnode-content-style h2,
+.dark .hashnode-content-style h3 {
+    color: rgb(212, 212, 212);
+}
+
+/* Enhanced link styling with smooth transitions */
+.hashnode-content-style a {
+    color: rgb(37, 99, 235);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: all 0.2s ease-in-out;
+}
+
+.hashnode-content-style a:hover {
+    color: rgb(29, 78, 216);
+    text-decoration-thickness: 2px;
+}
+
+.dark .hashnode-content-style a {
+    color: rgb(96, 165, 250);
+}
+
+.dark .hashnode-content-style a:hover {
+    color: rgb(147, 197, 253);
+}
+
+/* Improved blockquote styling */
+.hashnode-content-style blockquote {
+    border-left: 4px solid rgb(37, 99, 235);
+    padding-left: 1.5em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    font-style: italic;
+    background-color: rgba(37, 99, 235, 0.05);
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-right: 1em;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.dark .hashnode-content-style blockquote {
+    border-left-color: rgb(96, 165, 250);
+    background-color: rgba(96, 165, 250, 0.1);
+}
+
+/* Better list spacing */
+.hashnode-content-style ul,
+.hashnode-content-style ol {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    padding-left: 1.625em;
+}
+
+.hashnode-content-style li {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+/* Enhanced focus states for accessibility */
+.hashnode-content-style a:focus-visible {
+    outline: 2px solid rgb(37, 99, 235);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+.dark .hashnode-content-style a:focus-visible {
+    outline-color: rgb(96, 165, 250);
+}
+
+/* Improved image styling */
+.hashnode-content-style img {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.dark .hashnode-content-style img {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
 /* Override to remove the backtick */
@@ -45,4 +199,67 @@
 .dark .prose pre code {
     background-color: transparent;
     color: #ddd;
+}
+
+/* Skip to content link for accessibility */
+.skip-to-content {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 1em;
+    background-color: rgb(37, 99, 235);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.skip-to-content:focus {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1em;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Improved dark mode text color - softer for less contrast on bg-neutral-900 */
+.dark .hashnode-content-style {
+    color: rgb(212, 212, 212);
+}
+
+/* Better table styling */
+.hashnode-content-style table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.hashnode-content-style th {
+    background-color: rgba(37, 99, 235, 0.1);
+    font-weight: 600;
+    text-align: left;
+    padding: 0.75em;
+}
+
+.dark .hashnode-content-style th {
+    background-color: rgba(96, 165, 250, 0.15);
+}
+
+.hashnode-content-style td {
+    padding: 0.75em;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dark .hashnode-content-style td {
+    border-top-color: rgba(255, 255, 255, 0.1);
 }

@@ -8,23 +8,23 @@ export const config = {
 };
 
 const fontRegular = fetch(
-	new URL('../../../assets/PlusJakartaSans-Regular.ttf', import.meta.url),
+	new URL('../../../assets/web/OpenRunde-Regular.woff2', import.meta.url),
 ).then((res) => res.arrayBuffer());
 
 const fontMedium = fetch(
-	new URL('../../../assets/PlusJakartaSans-Medium.ttf', import.meta.url),
+	new URL('../../../assets/web/OpenRunde-Medium.woff2', import.meta.url),
 ).then((res) => res.arrayBuffer());
 
 const fontSemiBold = fetch(
-	new URL('../../../assets/PlusJakartaSans-SemiBold.ttf', import.meta.url),
+	new URL('../../../assets/web/OpenRunde-Semibold.woff2', import.meta.url),
 ).then((res) => res.arrayBuffer());
 
-const fontBold = fetch(new URL('../../../assets/PlusJakartaSans-Bold.ttf', import.meta.url)).then(
+const fontBold = fetch(new URL('../../../assets/web/OpenRunde-Bold.woff2', import.meta.url)).then(
 	(res) => res.arrayBuffer(),
 );
 
 const fontExtraBold = fetch(
-	new URL('../../../assets/PlusJakartaSans-ExtraBold.ttf', import.meta.url),
+	new URL('../../../assets/web/OpenRunde-Bold.woff2', import.meta.url),
 ).then((res) => res.arrayBuffer());
 
 const kFormatter = (num: number) => {
@@ -64,7 +64,7 @@ export default async function handler(req: NextRequest) {
 		(
 			<div
 				style={{
-					fontFamily: '"Plus Jakarta Sans"',
+					fontFamily: '"Open Runde"',
 				}}
 				tw={`relative flex h-full w-full p-8 bg-white`}
 			>
@@ -191,31 +191,31 @@ export default async function handler(req: NextRequest) {
 			height: 630,
 			fonts: [
 				{
-					name: 'Typewriter',
+					name: 'Open Runde',
 					data: fontDataRegular,
 					style: 'normal',
 					weight: 400,
 				},
 				{
-					name: 'Typewriter',
+					name: 'Open Runde',
 					data: fontDataMedium,
 					style: 'normal',
 					weight: 500,
 				},
 				{
-					name: 'Typewriter',
+					name: 'Open Runde',
 					data: fontDataSemiBold,
 					style: 'normal',
 					weight: 600,
 				},
 				{
-					name: 'Typewriter',
+					name: 'Open Runde',
 					data: fontDataBold,
 					style: 'normal',
 					weight: 700,
 				},
 				{
-					name: 'Typewriter',
+					name: 'Open Runde',
 					data: fontDataExtraBold,
 					style: 'normal',
 					weight: 800,

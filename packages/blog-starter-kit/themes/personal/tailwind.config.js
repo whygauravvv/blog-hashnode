@@ -6,6 +6,9 @@ module.exports = {
 	darkMode: 'class',
 	theme: {
 		extend: {
+			fontFamily: {
+				sans: ['Open Runde', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+			},
 			colors: {
 				'accent-1': '#FAFAFA',
 				'accent-2': '#EAEAEA',
