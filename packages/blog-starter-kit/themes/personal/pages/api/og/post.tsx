@@ -15,21 +15,13 @@ const fontMedium = fetch(
 	new URL('../../../assets/web/OpenRunde-Medium.woff2', import.meta.url),
 ).then((res) => res.arrayBuffer());
 
-const fontSemiBold = fetch(
-	new URL('../../../assets/web/OpenRunde-Semibold.woff2', import.meta.url),
-).then((res) => res.arrayBuffer());
-
 const fontBold = fetch(new URL('../../../assets/web/OpenRunde-Bold.woff2', import.meta.url)).then(
 	(res) => res.arrayBuffer(),
 );
 
-const fontExtraBold = fetch(
-	new URL('../../../assets/web/OpenRunde-Bold.woff2', import.meta.url),
-).then((res) => res.arrayBuffer());
-
 export default async function handler(req: NextRequest) {
-	const [fontDataRegular, fontDataMedium, fontDataSemiBold, fontDataBold, fontDataExtraBold] =
-		await Promise.all([fontRegular, fontMedium, fontSemiBold, fontBold, fontExtraBold]);
+	const [fontDataRegular, fontDataMedium, fontDataBold] =
+		await Promise.all([fontRegular, fontMedium, fontBold]);
 
 	const { searchParams } = new URL(req.url);
 
@@ -174,7 +166,7 @@ export default async function handler(req: NextRequest) {
 				},
 				{
 					name: 'Open Runde',
-					data: fontDataSemiBold,
+					data: fontDataMedium,
 					style: 'normal',
 					weight: 600,
 				},
@@ -186,7 +178,7 @@ export default async function handler(req: NextRequest) {
 				},
 				{
 					name: 'Open Runde',
-					data: fontDataExtraBold,
+					data: fontDataBold,
 					style: 'normal',
 					weight: 800,
 				},
